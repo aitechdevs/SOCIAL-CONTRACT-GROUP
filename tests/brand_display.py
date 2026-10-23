@@ -8,6 +8,9 @@ with sync_playwright() as p:
   page=b.new_page(viewport={'width':width,'height':height})
   for slug in ['/','/about','/contact','/projects','/news','/login']:
    page.goto(base+slug,wait_until='networkidle')
+   page.locator('.whatsapp-float').scroll_into_view_if_needed()
+   assert page.locator('footer .whatsapp-float').count()==1
+   assert page.locator('.whatsapp-float').evaluate('el=>getComputedStyle(el).position')=='absolute'
    for selector,expected in [('.whatsapp-float',52 if width<641 else 58),('.whatsapp-float svg',32)]:
     box=page.locator(selector).bounding_box();assert abs(box['width']-expected)<1 and abs(box['height']-expected)<1
     assert box['x']>=0 and box['y']>=0 and box['x']+box['width']<=width and box['y']+box['height']<=height
@@ -19,12 +22,9 @@ with sync_playwright() as p:
     assert len(rows)==4
     boxes=[r.bounding_box() for r in rows]
     assert all(boxes[i+1]['y']>=boxes[i]['y']+boxes[i]['height'] for i in range(3))
-   if slug=='/':
-    a=page.locator('.whatsapp-float').bounding_box();c=page.locator('.slide-controls').bounding_box()
-    assert a['x']>=c['x']+c['width'] or a['y']+a['height']<=c['y'] or a['y']>=c['y']+c['height']
    assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
   page.close()
  page=b.new_page();page.route('**/assets/editorial.css*',lambda route:route.abort())
- page.goto(base,wait_until='networkidle');assert page.locator('.whatsapp-float svg').bounding_box()['width']==32
+ page.goto(base,wait_until='networkidle');page.locator('.whatsapp-float').scroll_into_view_if_needed();assert page.locator('.whatsapp-float svg').bounding_box()['width']==32
  page.screenshot(path='/tmp/scg-brand-display.png');b.close()
-print('PASS: logo heading colours, WhatsApp sizing/position, no control overlap, missing older stylesheet resilience across desktop/mobile and six pages')
+print('PASS: logo heading colours, WhatsApp sizing/position, footer attachment, missing older stylesheet resilience across desktop/mobile and six pages')

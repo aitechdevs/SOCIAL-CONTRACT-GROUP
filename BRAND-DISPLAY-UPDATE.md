@@ -7,3 +7,5 @@ The WhatsApp SVG now has explicit width and height attributes as a fallback. A n
 Logo colours sampled from the artwork: forest green #034937 and gold #c09240. Page and section headings use forest green; slider and footer headings use gold against dark backgrounds. Navigation uses logo green, and the navigation button retains white text for contrast. Other typography and layouts are retained.
 
 Office contacts are grouped into labelled Email, Phone and WhatsApp rows with separate clickable email lines, mobile wrapping and a restrained branded panel.
+
+Latest placement: the WhatsApp button is positioned inside the footer at its bottom right. It scrolls with the footer, rather than following the viewport. Footer spacing reserves room for the button.
