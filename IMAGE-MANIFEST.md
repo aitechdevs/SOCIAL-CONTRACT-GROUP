@@ -32,3 +32,6 @@ At the owner’s request, all nine active illustrations were edited with the ima
 
 
 Homepage refresh: `assets/homepage-photos/` contains revised generated illustrations for community, students, energy engineers and bridge construction, with neutral daylight and natural textures. These are not documentary photographs. See HOMEPAGE-UPDATE.md.
+
+
+About-page update: `assets/photos-clean/tinubu-community-feature.webp` is illustrative artwork prepared from the supplied image of Tinubu with a flag-waving crowd. It does not document a verified event. Its sole placement is the About-page feature. Public image-credits route removed at the owner’s request; this source manifest retains provenance.

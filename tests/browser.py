@@ -28,7 +28,7 @@ with sync_playwright() as p:
  page.get_by_role('button',name='Open navigation').click();assert page.locator('#navigation').is_visible()
  page.keyboard.press('Escape');assert not page.locator('#navigation').is_visible()
  page.locator('img[loading=lazy]').evaluate_all("imgs=>imgs.forEach(i=>i.loading='eager')");page.wait_for_function("() => Array.from(document.images).every(i=>i.complete && i.naturalWidth>0)");page.screenshot(path='/tmp/scg-mobile.png',full_page=True)
- for route in ['image-credits','about','achievements','projects','news','chapters','login','register','contact','sitemap']:
+ for route in ['about','achievements','projects','news','chapters','login','register','contact','sitemap']:
   page.goto(base+'/'+route);assert page.evaluate('document.documentElement.scrollWidth <= window.innerWidth'),route
   page.locator('img[loading=lazy]').evaluate_all("imgs=>imgs.forEach(i=>i.loading='eager')");page.wait_for_function("() => Array.from(document.images).every(i=>i.complete && i.naturalWidth>0)")
  assert not errors,errors

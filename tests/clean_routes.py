@@ -10,7 +10,7 @@ class Links(HTMLParser):
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
   if tag=='a':self.urls.append(a.get('href',''))
-for slug in ['', 'about','projects','achievements','news','image-credits','sitemap','register']:
+for slug in ['', 'about','projects','achievements','news','sitemap','register']:
  r=urllib.request.urlopen(base+'/'+slug);html=r.read().decode();p=Links();p.feed(html)
  assert all('.php' not in u for u in p.urls if not u.startswith('http')),(slug,p.urls)
  if slug!='image-credits':

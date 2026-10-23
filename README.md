@@ -50,3 +50,5 @@ Latest existing-site homepage update: [scg-homepage-animation-update.zip](releas
 Latest office contacts and slider captions patch: [scg-contact-slider-update.zip](releases/scg-contact-slider-update.zip). See [CONTACT-SLIDER-UPDATE.md](CONTACT-SLIDER-UPDATE.md).
 
 Latest display patch: [scg-brand-display-update.zip](releases/scg-brand-display-update.zip). See [BRAND-DISPLAY-UPDATE.md](BRAND-DISPLAY-UPDATE.md).
+
+Latest About-image patch: [scg-about-image-update.zip](releases/scg-about-image-update.zip). See [ABOUT-IMAGE-UPDATE.md](ABOUT-IMAGE-UPDATE.md).
