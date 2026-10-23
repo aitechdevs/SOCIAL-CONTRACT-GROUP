@@ -8,12 +8,12 @@ with sync_playwright() as p:
  page.goto(base,wait_until='networkidle');assert abs(page.locator('.fullscreen-hero').bounding_box()['width']-page.viewport_size['width'])<2;page.locator('img[loading=lazy]').evaluate_all("imgs=>imgs.forEach(i=>i.loading='eager')");page.wait_for_function("() => Array.from(document.images).every(i=>i.complete && i.naturalWidth>0)");page.screenshot(path='/tmp/scg-desktop.png',full_page=True)
  page.get_by_role('button',name='Education',exact=True).click();assert page.locator('.resource-grid .topic-card:visible').count()==1
  page.get_by_role('button',name='Featured topics',exact=True).click();assert page.locator('.resource-grid .topic-card:visible').count()==3
- assert page.locator('#hero-photo').get_attribute('src').endswith('community-skyline.webp')
- page.get_by_role('button',name='Next slide').click();assert page.locator('#slide-number').inner_text()=='02'
- assert page.locator('#hero-photo').get_attribute('src').endswith('students-library.webp')
+ assert page.locator('.slide-frame.is-active').get_attribute('src').endswith('community-skyline.webp')
+ page.get_by_role('button',name='Next slide').click();page.wait_for_function("()=>document.querySelector('#slide-number').textContent==='02'");page.wait_for_function("()=>document.querySelector('.homepage-hero').getAttribute('aria-busy')==='false'")
+ assert page.locator('.slide-frame.is-active').get_attribute('src').endswith('students-library.webp')
  page.get_by_role('button',name='Pause slideshow').click()
  for expected in ['03','04','01']:
-  page.get_by_role('button',name='Next slide').click();assert page.locator('#slide-number').inner_text()==expected
+  page.get_by_role('button',name='Next slide').click();page.wait_for_function("expected=>document.querySelector('#slide-number').textContent===expected",arg=expected);page.wait_for_function("()=>document.querySelector('.homepage-hero').getAttribute('aria-busy')==='false'")
  page.goto(base+'/news');page.get_by_role('button',name='Energy',exact=True).focus();page.keyboard.press('Enter')
  assert page.locator('.resource-grid .topic-card:visible').count()==1
  assert page.get_by_role('button',name='Energy',exact=True).get_attribute('aria-pressed')=='true'

@@ -43,3 +43,6 @@ If a deployed page has no styling or has missing images, download `releases/scg-
 ## Clean URLs and full-screen slideshow
 
 The latest existing-site update is `releases/scg-clean-urls-fullscreen-update.zip`. Follow `CLEAN-URL-UPDATE.md`, including backing up `.htaccess` and retaining any cPanel PHP-handler settings. Public routes now use `/about`, `/projects`, etc. Image credits are consolidated on `/image-credits`; the homepage slideshow is image-only and fills the remaining screen height.
+
+
+Latest existing-site homepage update: [scg-homepage-animation-update.zip](releases/scg-homepage-animation-update.zip). See [HOMEPAGE-UPDATE.md](HOMEPAGE-UPDATE.md) for installation, bundled fonts, animation details and illustration provenance.

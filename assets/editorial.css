@@ -23,3 +23,14 @@ body{font-family:Inter,Arial,sans-serif;font-size:15px;line-height:1.75;color:va
 .fullscreen-hero .slide-controls button{background:#ffffff16;color:white;border-color:#ffffff50}.fullscreen-hero .slide-controls button:hover{background:#ffffff35}.fullscreen-hero .slide-track{background:#ffffff40}.fullscreen-hero .slide-track i{background:#f0d39b}
 .about-photo>img{border-radius:12px}.impact-image:after{display:none}
 @media(max-width:640px){.hero.fullscreen-hero{height:calc(100svh - var(--hero-offset,145px));min-height:360px}.fullscreen-hero .hero-bottom{bottom:18px}.fullscreen-hero .slide-controls{padding:8px 12px;gap:12px}.fullscreen-hero .hero-visual>img{object-position:50% center}.footer-bottom>div{flex-wrap:wrap;gap:12px 20px}}
+
+/* Reference typography supplied by the site owner. */
+header nav,.topic-nav a{font-family:"Roboto Condensed",Helvetica,Arial,Verdana,sans-serif;font-size:16px;font-weight:700;line-height:20px;color:#81d742}
+header nav .button{font-family:"Roboto Condensed",Helvetica,Arial,Verdana,sans-serif;font-size:16px;line-height:20px;color:#81d742}
+h1,h2,h3,h4,.eyebrow{font-family:"Fjalla One",Arial,sans-serif;font-weight:400;letter-spacing:0;color:#016701}
+h1,h2{font-size:30px;line-height:32px}
+.chapter-banner h2,.page-hero h1,.intro h2,.chapter-banner .eyebrow.light{color:#016701}
+footer h3,footer h4{color:inherit}
+
+@font-face{font-family:"Roboto Condensed";src:url("/assets/fonts/RobotoCondensed.ttf") format("truetype");font-weight:100 900;font-style:normal;font-display:swap}
+@font-face{font-family:"Fjalla One";src:url("/assets/fonts/FjallaOne-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}

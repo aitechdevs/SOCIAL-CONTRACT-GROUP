@@ -29,3 +29,6 @@ The user referenced `https://chromeunboxed.com/` for typography, brightness, lay
 ## Text-free edit revision
 
 At the owner’s request, all nine active illustrations were edited with the image-generation tool to remove embedded lettering, numbers, logos and labels from buildings, signs, books, clothing and equipment. The resulting image masters were reviewed visually and encoded as WebP for website delivery. Active images are now under `assets/photos-clean/`, with new URLs to avoid previously cached images. The illustrations remain artwork rather than documentary project evidence. Visible picture captions have been removed; provenance is consolidated on `/image-credits`, and accessible alt descriptions remain.
+
+
+Homepage refresh: `assets/homepage-photos/` contains revised generated illustrations for community, students, energy engineers and bridge construction, with neutral daylight and natural textures. These are not documentary photographs. See HOMEPAGE-UPDATE.md.
