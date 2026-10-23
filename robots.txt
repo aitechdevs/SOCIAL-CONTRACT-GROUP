@@ -1,0 +1,15 @@
+User-agent: *
+Allow: /
+Disallow: /config/
+Disallow: /database/
+Disallow: /tests/
+Disallow: /tools/
+Disallow: /docs/
+Disallow: /.git/
+Disallow: /bootstrap.php
+Disallow: /data.php
+Disallow: /seo.php
+
+# Account/admin pages use noindex headers and meta tags, not crawl blocks.
+# Crawlers must fetch these pages to observe noindex. Authentication protects data.
+Sitemap: https://socialcontractgroup.org/sitemap.xml

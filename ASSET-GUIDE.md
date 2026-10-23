@@ -1,0 +1,20 @@
+# Visual system and asset guide
+
+Logo: `assets/logo.svg`, an original civic institution mark. It represents public institutions and shared responsibility, not an official seal or party emblem. Working slogan: **Citizens. Leadership. Shared responsibility.**
+
+Palette: forest green #13583f, deep green #123e30, restrained gold #efc679, warm ivory #f7f7f1. Manrope headings and DM Sans body, with sans-serif fallbacks. Layout uses generous whitespace, editorial grids, discreet borders and restrained transitions. No source website branding is copied.
+
+## Original local graphics
+
+- `nigeria-skyline.svg`: abstract city and bridge illustration; homepage first slide. It is conceptual artwork, not documentary evidence of a particular place or completed project.
+- `slide-education.svg`: graduation cap; education and opportunity slide.
+- `slide-infrastructure.svg`: bridge; projects slide and development feature.
+- `slide-community.svg`: people; state participation slide.
+- `slide-civic.svg`: public institution; additional civic artwork.
+- `editorial-*.svg`: matching editorial thumbnail crops.
+
+## Page image guidance
+
+About: consensual, documentary community dialogue, diverse adult participants. National impact/projects: geolocated, dated, licensed project photos with accurate completion status; avoid illustrating proposed works as finished. Chapters: verified local events with consent and captions. News: original reporting photos tied to each story. Events: actual venue and accessibility images once confirmed. Volunteer: real civic education activities. Donate: audited reporting or financial governance illustration. Contact/authentication/dashboards: restrained logo and simple typography; avoid decorative images of identifiable members. 2027 civic desk: neutral ballot-process diagrams; no candidate persuasion graphics.
+
+Obtain image rights and consent; record source, author, licence, date and caption. Do not imply the supplied artwork depicts a real government project or endorsement. The site intentionally uses original SVGs rather than unreliable remote stock assets.
