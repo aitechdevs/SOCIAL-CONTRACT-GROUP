@@ -24,3 +24,5 @@ $initiatives=[
  ['Accountability','Anti-corruption and public oversight','Explore public oversight and how to distinguish investigations, allegations and court findings.','Distinguish allegations, investigations, charges, court findings and recoveries; avoid treating an accusation as guilt.','Economic and Financial Crimes Commission','https://www.efcc.gov.ng/'],
  ['Communities','Security, harmony and industrial relations','Explore public institutions, peaceful coexistence, safety and labour relations through separate evidence sources.','Use disaggregated safety and labour evidence. Claims of peace or stability require dates, geographic coverage and multiple sources.','National Bureau of Statistics','https://www.nigerianstat.gov.ng/']
 ];
+
+$titles['image-credits']='Image credits & attribution';

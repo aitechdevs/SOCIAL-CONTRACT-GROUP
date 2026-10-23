@@ -18,6 +18,8 @@ The new full-name identity combines an SCG monogram with the words **SOCIAL CONT
 
 ## Existing-site update
 
+For the latest clean-URL/full-screen revision, use `CLEAN-URL-UPDATE.md` and its new package. The instructions below refer to the earlier logo-only package.
+
 1. Back up your existing `index.php` and `assets` directory outside the domain document root.
 2. Upload and extract `releases/scg-logo-update-fixed.zip` into the domain document root (`socialcontractgroup.org` in the confirmed cPanel setup), replacing matching files.
 3. The update includes the current frontend assets and `index.php`, so it also works if you have not yet installed the previous editorial image update. It adds `assets/brand/social-contract-group-logo-master.png` and `assets/favicon.svg`, and updates the header/footer, responsive logo sizing, favicon reference, structured-data logo URL and social-sharing image.

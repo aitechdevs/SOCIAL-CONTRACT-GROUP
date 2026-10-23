@@ -1,5 +1,7 @@
 # Installing the editorial/image update
 
+This historical guide describes the earlier layout package. For the current full-screen/text-free update with clean URLs, use `CLEAN-URL-UPDATE.md`, including its Apache routing instructions.
+
 Download `releases/scg-editorial-image-update.zip` from GitHub. This is an update for an existing installation, not the full first-install archive.
 
 1. Back up `index.php` and your existing `assets` directory outside the website document root.

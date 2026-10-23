@@ -14,7 +14,7 @@ $error=''; $success='';
 if($_SERVER['REQUEST_METHOD']==='POST') {
  if(!hash_equals($_SESSION['csrf'],$_POST['csrf']??'')){http_response_code(403);exit('Invalid form token. Please reload.');}
  $action=$_POST['action']??'';
- if($action==='logout'){$_SESSION=[];session_destroy();header('Location: index.php');exit;}
+ if($action==='logout'){$_SESSION=[];session_destroy();header('Location: /');exit;}
  if(time()-($_SESSION['last_submit']??0)<3) {$error='Please wait a moment before trying again.';}
  else {$_SESSION['last_submit']=time();try {
  $name=trim($_POST['name']??'');$email=trim($_POST['email']??'');$password=$_POST['password']??'';
@@ -27,7 +27,7 @@ if($_SERVER['REQUEST_METHOD']==='POST') {
  }elseif($action==='login'){
  $q=db()->prepare('SELECT * FROM users WHERE email=?');$q->execute([$email]);$u=$q->fetch();
  if(!$u||!password_verify($password,$u['password_hash'])) throw new InvalidArgumentException('Email or password is incorrect.');
- session_regenerate_id(true);$_SESSION['user']=['id'=>$u['id'],'name'=>$u['name'],'role'=>$u['role']];header('Location: index.php?page=dashboard');exit;
+ session_regenerate_id(true);$_SESSION['user']=['id'=>$u['id'],'name'=>$u['name'],'role'=>$u['role']];header('Location: /dashboard');exit;
  }elseif(in_array($action,['contact','volunteer'],true)){
  $message=trim($_POST['message']??'');if(strlen($name)<2||strlen($name)>120||strlen($message)<10||strlen($message)>5000) throw new InvalidArgumentException('Enter your name and a message of 10–5,000 characters.');
  $q=db()->prepare('INSERT INTO submissions(kind,name,email,message) VALUES(?,?,?,?)');$q->execute([$action,$name,$email,$message]);$success='Thank you. Your submission has been received.';

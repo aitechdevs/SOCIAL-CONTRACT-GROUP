@@ -26,3 +26,7 @@ See `SEO.md` for the exact deployment, Google ownership-verification and sitemap
 ## Static asset permissions
 
 Public CSS, JavaScript and image files must be readable by the host’s web server: normally 644 for files and 755 for asset directories. Corrected release ZIPs include these modes explicitly. A PHP page can load while static assets return 403 if asset permissions are 600. Keep private database configuration restrictive; never apply 777 permissions.
+
+## Clean routes
+
+The current application uses clean paths and requires the current `.htaccess` routing rules. See `CLEAN-URL-UPDATE.md`. Preserve cPanel-generated PHP handlers/version settings when updating `.htaccess`. Public URLs and the sitemap no longer contain `index.php`; PHP remains the server-side implementation.

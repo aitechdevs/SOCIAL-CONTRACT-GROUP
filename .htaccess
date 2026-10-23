@@ -1,22 +1,26 @@
-Options -Indexes
+Options -Indexes -MultiViews
 DirectoryIndex index.php
 <IfModule mod_rewrite.c>
 RewriteEngine On
-# Apply production canonical redirects only to the real domain; local development is unaffected.
+# Canonical production host/TLS. Local development hosts are unaffected.
 RewriteCond %{HTTP_HOST} ^www\.socialcontractgroup\.org$ [NC]
 RewriteRule ^ https://socialcontractgroup.org%{REQUEST_URI} [R=301,L,NE]
 RewriteCond %{HTTP_HOST} ^socialcontractgroup\.org$ [NC]
 RewriteCond %{HTTPS} !=on
 RewriteRule ^ https://socialcontractgroup.org%{REQUEST_URI} [R=301,L,NE]
+# Keep private source and setup files inaccessible before front-controller routing.
 RewriteRule (^|/)\. - [F,L]
 RewriteRule ^(?:config|database|tests|tools|docs|releases)(?:/|$) - [F,L]
 RewriteRule ^(?:bootstrap|data|seo)\.php$ - [F,L]
-RewriteRule ^(?:README|DEPLOYMENT|SITEMAP|ASSET-GUIDE|SEO)\.md$ - [F,L]
+RewriteRule ^(?:README|DEPLOYMENT|SITEMAP|ASSET-GUIDE|SEO|LOGO-GUIDE|IMAGE-MANIFEST|DESIGN-UPDATE)\.md$ - [F,L]
+# Preserve real asset files/directories. PHP resolves clean public routes and old-URL redirects.
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^ index.php [END]
 </IfModule>
 <FilesMatch "^(\.|.*\.(?:sql|log|ini|bak|env))">
 Require all denied
 </FilesMatch>
-
 <FilesMatch "^(bootstrap|data|seo)\.php$">
 Require all denied
 </FilesMatch>

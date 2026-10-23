@@ -18,10 +18,10 @@ class Head(HTMLParser):
   if self.in_ld:self.ld.append(json.loads(data))
   if self.in_title:self.title+=data
 xml=urllib.request.urlopen(base+'/sitemap.xml');assert xml.headers.get_content_type() in ['application/xml','text/xml']
-root=E.fromstring(xml.read());urls=[e.text for e in root.findall('{*}url/{*}loc')];assert len(urls)==11 and len(set(urls))==11
+root=E.fromstring(xml.read());urls=[e.text for e in root.findall('{*}url/{*}loc')];assert len(urls)==12 and len(set(urls))==12
 names=[];descriptions=[]
 for url in urls:
- assert url.startswith(site+'/')
+ assert url.startswith(site+'/') and '.php' not in url and '?' not in url
  r=urllib.request.urlopen(base+url[len(site):]);h=Head();h.feed(r.read().decode());assert h.canonical==[url]
  assert h.meta['robots'].startswith('index, follow') and r.headers['X-Robots-Tag'].startswith('index, follow')
  assert 40<len(h.meta['description'])<200
@@ -31,9 +31,9 @@ for url in urls:
  assert '/#organization' in json.dumps(h.ld)
  assert 'google-site-verification' not in h.meta # No fake verification token.
  names.append(h.title);descriptions.append(h.meta['description'])
-assert len(set(names))==11 and len(set(descriptions))==11
+assert len(set(names))==12 and len(set(descriptions))==12
 for page in ['login','register','dashboard','admin','events','donate','missing']:
- try:r=urllib.request.urlopen(base+'/index.php?page='+page)
+ try:r=urllib.request.urlopen(base+'/'+page)
  except urllib.error.HTTPError as ex:r=ex
  h=Head();h.feed(r.read().decode());assert 'noindex' in h.meta['robots'],page;assert 'noindex' in r.headers['X-Robots-Tag'],page
  assert not h.ld
@@ -46,4 +46,4 @@ for host in ['socialcontractgroup.org','www.socialcontractgroup.org']:
 for private in ['/seo.php','/tools/generate-sitemap.php']:
  try:urllib.request.urlopen(base+private);raise AssertionError(private+' exposed')
  except urllib.error.HTTPError as ex:assert ex.code==403
-print('PASS: 11 sitemap URLs, unique metadata, canonicals, structured data, social previews, noindex, robots and production redirects')
+print('PASS: 12 sitemap URLs, unique metadata, canonicals, structured data, social previews, noindex, robots and production redirects')

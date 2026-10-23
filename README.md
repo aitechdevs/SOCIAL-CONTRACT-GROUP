@@ -27,7 +27,7 @@ The full-name logo is integrated into the header and footer. Download the transp
 With PHP and MySQL installed:
 1. Create a database and limited database user. Import `database/schema.sql` once.
 2. Copy `config/example.php` to `config/local.php`. Set the DSN, user and password privately. Never commit this file.
-3. Run `php -S 127.0.0.1:8000 -t .` from this directory. PHP's built-in server is for local development only.
+3. Serve this checkout using Apache 2.4 or compatible LiteSpeed, with URL rewriting and `.htaccess` overrides enabled. The built-in PHP server without a router does not support the clean public routes.
 4. Visit the home page, register an account, sign in, and submit a contact or volunteer enquiry.
 
 Use the existing checkout; a Git worktree is unnecessary. Public pages render without a configured database, while account/submission forms report that setup is unavailable. Session cookies and CSRF tokens protect forms. Prepared SQL and escaped output protect database and page boundaries. This is a working starter with member and read-only admin dashboards, not a full CMS.
@@ -39,3 +39,7 @@ Run PHP lint over PHP files. `python tests/smoke.py` exercises public routes, se
 ## Corrected asset-permission package
 
 If a deployed page has no styling or has missing images, download `releases/scg-logo-update-fixed.zip`. It contains the current frontend with explicit 644 file and 755 directory permissions. Extract it into the domain document root and allow matching frontend files to be replaced. Private configuration and database files are excluded. See `LOGO-GUIDE.md`.
+
+## Clean URLs and full-screen slideshow
+
+The latest existing-site update is `releases/scg-clean-urls-fullscreen-update.zip`. Follow `CLEAN-URL-UPDATE.md`, including backing up `.htaccess` and retaining any cPanel PHP-handler settings. Public routes now use `/about`, `/projects`, etc. Image credits are consolidated on `/image-credits`; the homepage slideshow is image-only and fills the remaining screen height.

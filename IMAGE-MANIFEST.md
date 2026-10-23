@@ -1,8 +1,8 @@
 # Supplied image review
 
-Source: `Social_Contract_Group_Website_Images.zip`, supplied by the site owner. No licensing, capture dates, photographer credits or documentary provenance accompanied the archive. The deployed images are labelled **supplied illustrations**. They must not be represented as proof of actual beneficiaries, named locations, completed government projects or official endorsements. No claim is made that these are verified documentary photographs.
+Source: `Social_Contract_Group_Website_Images.zip`, supplied by the site owner. No licensing, capture dates, photographer credits or documentary provenance accompanied the archive. The active images are illustrative artwork; provenance is described on the Image credits page. They must not be represented as proof of actual beneficiaries, named locations, completed government projects or official endorsements. No claim is made that these are verified documentary photographs.
 
-Images are copied unchanged as local WebP assets. Filenames in the archive did not consistently describe their visible contents, so destination names follow visual inspection.
+The initial upload was copied as local WebP assets; the current revision uses text-free edits described below. Filenames in the archive did not consistently describe their visible contents, so destination names follow visual inspection.
 
 | Original file prefix | Visible subject | Local file / use |
 |---|---|---|
@@ -25,3 +25,7 @@ The social-sharing preview is a rendered layout combining SCG branding, neutral 
 # Reference and presentation
 
 The user referenced `https://chromeunboxed.com/` for typography, brightness, layouts, images, tabs and simplicity. Direct retrieval returned a proxy 403, so the current live design and exact font could not be inspected. This update implements the requested traits in an original SCG layout: Inter/system typography, white surfaces, photo-led cards, a light hero, topic filter buttons and an editorial resource-picks strip. “Deals” is interpreted as useful civic resources; no discounts, retail listings or financial offers are invented.
+
+## Text-free edit revision
+
+At the owner’s request, all nine active illustrations were edited with the image-generation tool to remove embedded lettering, numbers, logos and labels from buildings, signs, books, clothing and equipment. The resulting image masters were reviewed visually and encoded as WebP for website delivery. Active images are now under `assets/photos-clean/`, with new URLs to avoid previously cached images. The illustrations remain artwork rather than documentary project evidence. Visible picture captions have been removed; provenance is consolidated on `/image-credits`, and accessible alt descriptions remain.

@@ -2,7 +2,7 @@
 
 ## Implemented
 
-- Unique titles and descriptions for 11 indexable public pages.
+- Unique titles and descriptions for 12 indexable public pages.
 - Absolute HTTPS canonical URLs on `socialcontractgroup.org`.
 - Open Graph and Twitter large-image cards with a local 1200 × 630 PNG.
 - Organization, WebSite, WebPage and public-page breadcrumb JSON-LD. No invented address, reviews, event dates, statistics or social profiles.
@@ -57,3 +57,7 @@ php tools/generate-sitemap.php
 This updates both `sitemap.xml` and `robots.txt` from the same configured domain and public-route map. Run locally if cPanel has no terminal, then upload the two generated files. Add verified, original content and per-article sources before indexing new publication/event pages. Do not index empty placeholders or expose private pages to grow sitemap counts.
 
 Tests: `python tests/seo.py` against the local Apache development server (default port 8080). Override with `SCG_BASE_URL` only for a controlled test environment; this test checks HTTP redirect behaviours using production Host headers. It validates sitemap/canonical consistency, unique descriptions/titles, JSON-LD, social images, noindex coverage, robots and source-file protection.
+
+## Clean URL update
+
+All public canonicals and sitemap entries now use clean paths such as `/about`. Legacy `/index.php` and query-string page links permanently redirect. The sitemap includes the Image credits page. See `CLEAN-URL-UPDATE.md` for the required Apache rules and how to preserve cPanel PHP settings.

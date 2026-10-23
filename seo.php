@@ -3,6 +3,7 @@ declare(strict_types=1);
 $seoConfig = require __DIR__.'/config/seo.php';
 $siteUrl = rtrim($seoConfig['site_url'], '/');
 $seoPages = [
+ 'image-credits' => ['Image Credits & Attribution | Social Contract Group', 'Read about the supplied illustrations used on Social Contract Group, their attribution, provenance and the distinction between artwork and verified project records.'],
  'home' => ['Social Contract Group | Nigerian Civic & Policy Information', 'Explore Nigerian public policy, civic participation and national development with Social Contract Group. Find project references and community resources.'],
  'about' => ['About Social Contract Group | Purpose & Principles', 'Learn about Social Contract Group, its founding context, public accountability principles and approach to evidence-led civic information.'],
  'achievements' => ['PBAT Projects, Achievements & National Impact | SCG', 'Explore 12 policy and project research records associated with the Tinubu administration, with source links, verification status and questions for public scrutiny.'],
@@ -16,5 +17,5 @@ $seoPages = [
  'sitemap' => ['Website Directory | Social Contract Group', 'Find Social Contract Group’s public information pages, project library, civic resources, state directory and member access pages.'],
 ];
 function scgCanonical(string $page, string $siteUrl): string {
- return $siteUrl.($page === 'home' ? '/' : '/index.php?page='.rawurlencode($page));
+ return $siteUrl.($page === 'home' ? '/' : '/'.rawurlencode($page));
 }

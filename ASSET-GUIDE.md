@@ -26,3 +26,7 @@ The active interface now uses Inter/system typography, bright surfaces, image-le
 ## Full-name logo master
 
 The active header/footer now use the transparent 2172 × 724 PNG master. See `LOGO-GUIDE.md` for downloads, file formats and print sizing. The browser favicon is `assets/favicon.svg`; JSON-LD and social-sharing artwork reference the current identity.
+
+## Image-only presentation and clean paths
+
+The active photo assets are now text-free edits in `assets/photos-clean/`. Visible captions and photo overlays are removed; provenance is available on `/image-credits`. The homepage slideshow fills the viewport below navigation and shows photographs with controls only. See `CLEAN-URL-UPDATE.md`.
