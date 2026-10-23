@@ -37,3 +37,5 @@ Homepage refresh: `assets/homepage-photos/` contains revised generated illustrat
 About-page update: `assets/photos-clean/tinubu-community-feature.webp` is illustrative artwork prepared from the supplied image of Tinubu with a flag-waving crowd. It does not document a verified event. Its sole placement is the About-page feature. Public image-credits route removed at the owner’s request; this source manifest retains provenance.
 
 Chapter section: `assets/photos-clean/tinubu-oluremi-chapters.jpg` is the unaltered landscape photograph supplied in tinubu.zip (`images (9).jpg`, 738×402). It appears once on the homepage. Subject descriptions do not establish an SCG event or chapter affiliation.
+
+Civic participation homepage card: `assets/photos-clean/oluremi-tinubu-portrait.jpg`, supplied `images (1).jpg` (633×484), unaltered portrait used once. Full image contained within the card frame.

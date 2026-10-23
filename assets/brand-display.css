@@ -33,3 +33,5 @@ body .about-feature>img{display:block;width:100%;height:auto;aspect-ratio:16/9;o
 .chapter-banner .chapter-photo{height:auto;aspect-ratio:738/402;top:50%;transform:translateY(-50%);background:#e7ede7}
 .chapter-banner .chapter-photo>img{display:block;width:100%;height:auto;aspect-ratio:738/402;object-fit:contain;object-position:center}
 @media(max-width:640px){.chapter-banner .chapter-photo{top:auto;transform:none}}
+
+.editorial-photo>img[src$="oluremi-tinubu-portrait.jpg"]{object-fit:contain;object-position:center;background:#f3f6f1}
