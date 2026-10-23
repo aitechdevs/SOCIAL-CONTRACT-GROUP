@@ -48,3 +48,5 @@ The latest existing-site update is `releases/scg-clean-urls-fullscreen-update.zi
 Latest existing-site homepage update: [scg-homepage-animation-update.zip](releases/scg-homepage-animation-update.zip). See [HOMEPAGE-UPDATE.md](HOMEPAGE-UPDATE.md) for installation, bundled fonts, animation details and illustration provenance.
 
 Latest office contacts and slider captions patch: [scg-contact-slider-update.zip](releases/scg-contact-slider-update.zip). See [CONTACT-SLIDER-UPDATE.md](CONTACT-SLIDER-UPDATE.md).
+
+Latest display patch: [scg-brand-display-update.zip](releases/scg-brand-display-update.zip). See [BRAND-DISPLAY-UPDATE.md](BRAND-DISPLAY-UPDATE.md).

@@ -1,0 +1,15 @@
+/* Last-loaded shared brand layer; sampled from the SCG logo artwork. */
+:root{--scg-logo-green:#034937;--scg-logo-gold:#c09240}
+body h1,body h2,body h3,body h4,body .eyebrow,body .chapter-banner .eyebrow.light{color:var(--scg-logo-green)}
+header nav,header nav>a,.topic-nav a{color:var(--scg-logo-green)}
+header nav .button{color:#fff}header nav>a:hover,.topic-nav a:hover{color:var(--scg-logo-green);text-decoration:underline;text-decoration-color:var(--scg-logo-gold);text-underline-offset:5px}
+footer h1,footer h2,footer h3,footer h4,footer .eyebrow{color:var(--scg-logo-gold)}
+.home-page .homepage-hero .slide-caption h2{color:var(--scg-logo-gold);text-shadow:0 2px 12px #0009}
+.home-page .homepage-hero .slide-overlay{background:linear-gradient(90deg,rgba(4,27,19,.92),rgba(4,27,19,.64) 52%,rgba(4,27,19,.12)),linear-gradient(0deg,rgba(4,27,19,.38),transparent 45%)}
+.home-page .homepage-hero .slide-caption p{color:#fff}
+/* Bound both the floating control and its SVG, including when older CSS is cached. */
+a.whatsapp-float{position:fixed;inset:auto 22px 22px auto;z-index:80;display:flex;align-items:center;justify-content:center;box-sizing:border-box;flex:none;width:58px;height:58px;min-width:58px;max-width:58px;min-height:58px;max-height:58px;padding:0;overflow:hidden;border-radius:50%;border:2px solid #fff;background:#128c4b;color:#fff;line-height:1;text-decoration:none;box-shadow:0 4px 18px #0003}
+a.whatsapp-float>svg{display:block;flex:0 0 32px;width:32px;height:32px;min-width:32px;max-width:32px;min-height:32px;max-height:32px;fill:currentColor}
+@media(max-width:640px){a.whatsapp-float{right:14px;bottom:14px;width:52px;height:52px;min-width:52px;max-width:52px;min-height:52px;max-height:52px}.home-page a.whatsapp-float{bottom:88px}}
+.home-page h2,.home-page h3,.page-hero h1,.chapter-banner h2,.intro h2{color:var(--scg-logo-green)}
+.home-page .homepage-hero .slide-caption h2{color:var(--scg-logo-gold)}
