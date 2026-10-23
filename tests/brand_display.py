@@ -13,6 +13,12 @@ with sync_playwright() as p:
     assert box['x']>=0 and box['y']>=0 and box['x']+box['width']<=width and box['y']+box['height']<=height
    colours=page.locator('main h1,main h2,main h3,main h4').evaluate_all('els=>els.filter(e=>e.getBoundingClientRect().width>1).map(e=>getComputedStyle(e).color)')
    assert all(c in ['rgb(3, 73, 55)','rgb(192, 146, 64)'] for c in colours),(slug,colours)
+   if slug=='/contact':
+    assert page.locator('.office-contacts dt').all_text_contents()==['Email','Phone','WhatsApp']
+    rows=page.locator('.office-contacts dd').all()
+    assert len(rows)==4
+    boxes=[r.bounding_box() for r in rows]
+    assert all(boxes[i+1]['y']>=boxes[i]['y']+boxes[i]['height'] for i in range(3))
    if slug=='/':
     a=page.locator('.whatsapp-float').bounding_box();c=page.locator('.slide-controls').bounding_box()
     assert a['x']>=c['x']+c['width'] or a['y']+a['height']<=c['y'] or a['y']>=c['y']+c['height']
