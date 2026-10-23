@@ -28,3 +28,8 @@ body footer a.whatsapp-float,body.home-page footer a.whatsapp-float{position:abs
 @media(max-width:640px){body footer a.whatsapp-float,body.home-page footer a.whatsapp-float{right:18px;bottom:18px}}
 
 body .about-feature>img{display:block;width:100%;height:auto;aspect-ratio:16/9;object-fit:contain;object-position:center;border-radius:12px}
+
+/* Preserve the supplied landscape portrait without cropping either face. */
+.chapter-banner .chapter-photo{height:auto;aspect-ratio:738/402;top:50%;transform:translateY(-50%);background:#e7ede7}
+.chapter-banner .chapter-photo>img{display:block;width:100%;height:auto;aspect-ratio:738/402;object-fit:contain;object-position:center}
+@media(max-width:640px){.chapter-banner .chapter-photo{top:auto;transform:none}}
