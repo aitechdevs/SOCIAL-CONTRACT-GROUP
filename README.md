@@ -35,3 +35,7 @@ Use the existing checkout; a Git worktree is unnecessary. Public pages render wi
 ## Validation
 
 Run PHP lint over PHP files. `python tests/smoke.py` exercises public routes, security boundaries and forms against a server at `http://127.0.0.1:8000`. Set `SCG_TEST_DATABASE=1` only against a disposable configured database to exercise registration, login and stored enquiries; that test creates a member and enquiries. `python tests/browser.py` uses an installed Python Playwright and Chromium for mobile navigation, slider controls, filters and screenshots.
+
+## Corrected asset-permission package
+
+If a deployed page has no styling or has missing images, download `releases/scg-logo-update-fixed.zip`. It contains the current frontend with explicit 644 file and 755 directory permissions. Extract it into the domain document root and allow matching frontend files to be replaced. Private configuration and database files are excluded. See `LOGO-GUIDE.md`.

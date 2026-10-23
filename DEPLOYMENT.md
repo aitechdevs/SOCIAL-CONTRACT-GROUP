@@ -22,3 +22,7 @@ Logos and icons are local SVGs; the editorial imagery uses owner-supplied WebP i
 ## Search visibility
 
 See `SEO.md` for the exact deployment, Google ownership-verification and sitemap-submission steps. Upload `seo.php`, `config/seo.php`, `robots.txt`, `sitemap.xml`, `assets/social-preview.png` and the updated application/Apache files. `config/seo.php` is a public-identity configuration file; keep `config/local.php` private. The `tools` directory contains a CLI-only sitemap generator and is denied over HTTP. Google Search Console verification and submission require the property owner and have not been completed by generating these files.
+
+## Static asset permissions
+
+Public CSS, JavaScript and image files must be readable by the host’s web server: normally 644 for files and 755 for asset directories. Corrected release ZIPs include these modes explicitly. A PHP page can load while static assets return 403 if asset permissions are 600. Keep private database configuration restrictive; never apply 777 permissions.
