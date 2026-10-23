@@ -1,0 +1,14 @@
+/* Show complete landscape slides on phones/tablets; keep captions below the photo. */
+@media(max-width:900px){
+ body.home-page .homepage-hero{display:flex;flex-direction:column;height:auto;min-height:0;overflow:hidden;background:#092f23}
+ body.home-page .homepage-hero .hero-visual{position:relative;inset:auto;flex:none;width:100%;height:auto;aspect-ratio:16/9;overflow:hidden;background:#092f23}
+ body.home-page .homepage-hero .slide-frame{object-fit:contain;object-position:center;animation:none!important;transform:none!important;width:100%;height:100%}
+ body.home-page .homepage-hero .slide-overlay{display:none}
+ body.home-page .homepage-hero .slide-caption{display:flex;position:relative;flex:none;justify-content:flex-start;height:auto;min-height:0;padding:24px 0 20px;margin:0 auto;width:calc(100% - 36px);max-width:640px}
+ body.home-page .homepage-hero .slide-caption h2{font-size:clamp(27px,4.8vw,36px);line-height:1.15;max-width:none;margin:0 0 12px;color:var(--scg-logo-gold);text-shadow:none}
+ body.home-page .homepage-hero .slide-caption p{font-size:15px;line-height:1.6;max-width:none;margin:0;color:white;text-shadow:none}
+ body.home-page .homepage-hero .hero-bottom{position:relative;inset:auto;flex:none;width:100%;height:auto;padding:0 12px 20px;box-sizing:border-box}
+ body.home-page .homepage-hero .slide-controls{padding:8px 12px;gap:11px;max-width:100%;box-sizing:border-box}
+ body.home-page .topic-nav>.wrap{scrollbar-width:none}
+ body.home-page .topic-nav>.wrap::-webkit-scrollbar{display:none}
+}

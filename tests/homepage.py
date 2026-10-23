@@ -10,7 +10,7 @@ with sync_playwright() as p:
   assert page.locator('#slide-title').count()==0
   assert page.locator('#slide-caption-title').is_visible()
   assert page.locator('#slide-caption-description').is_visible()
-  assert page.locator('.slide-overlay').is_visible()
+  assert page.locator('.slide-overlay').is_visible()==(width>900)
   assert page.locator('.whatsapp-float').get_attribute('href').startswith('https://wa.me/2348030920092')
   caption=page.locator('.slide-caption h2').bounding_box();assert caption['x']>=0 and caption['x']+caption['width']<=width
   assert 'Connect communities. Follow the progress' not in page.locator('body').inner_text()
@@ -19,7 +19,7 @@ with sync_playwright() as p:
   box=page.locator('.homepage-hero').bounding_box();assert abs(box['width']-width)<=1
   # Buttons scroll into view if necessary; size verification is independent of scroll position.
   actual_height=page.locator('.homepage-hero').evaluate('el=>el.offsetHeight');assert actual_height>=180
-  if width>=768 and height>=768:assert abs(actual_height-(height-page.locator('.homepage-hero').evaluate('el=>Number.parseFloat(el.style.getPropertyValue("--hero-offset"))')))<3
+  if width>900 and height>=768:assert abs(actual_height-(height-page.locator('.homepage-hero').evaluate('el=>Number.parseFloat(el.style.getPropertyValue("--hero-offset"))')))<3
   assert page.locator('.slide-frame.is-active').get_attribute('src').startswith('/assets/homepage-photos/')
   page.close()
  page=browser.new_page(viewport={'width':1440,'height':1000});errors=[];page.on('pageerror',lambda e:errors.append(str(e)))
