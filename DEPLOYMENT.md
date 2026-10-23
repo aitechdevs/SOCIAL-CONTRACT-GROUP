@@ -17,7 +17,7 @@ The admin dashboard lists members count and the latest 100 enquiries. It is read
 
 ## Third-party resources
 
-All imagery and illustrations are local SVGs. Optional typography uses Google Fonts, with system fallbacks; remove font links for a fully self-hosted deployment or self-host licensed fonts. Reference links point to third-party sites; they are starting points, not endorsements or proof of a particular claim.
+Logos and icons are local SVGs; the editorial imagery uses owner-supplied WebP illustrations with visible captions. See IMAGE-MANIFEST.md for provenance and excluded files. Optional typography uses Google Fonts, with system fallbacks; remove font links for a fully self-hosted deployment or self-host licensed fonts. Reference links point to third-party sites; they are starting points, not endorsements or proof of a particular claim.
 
 ## Search visibility
 

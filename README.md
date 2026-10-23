@@ -14,6 +14,10 @@ The archive contains `public_html/` for the website and `setup/` for the databas
 
 GitHub’s **Code → Download ZIP** downloads the full development repository instead. Use the dedicated cPanel archive above for deployment. Do not upload the `releases` directory into your web root.
 
+## Updating the existing live site
+
+Use [the editorial/image update ZIP](https://github.com/aitechdevs/SOCIAL-CONTRACT-GROUP/raw/refs/heads/main/releases/scg-editorial-image-update.zip) and follow `DESIGN-UPDATE.md`. It preserves private database configuration and hosting settings. Image provenance and exclusions are in `IMAGE-MANIFEST.md`.
+
 ## Local development
 
 With PHP and MySQL installed:

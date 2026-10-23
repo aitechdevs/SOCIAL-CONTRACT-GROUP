@@ -18,3 +18,7 @@ Palette: forest green #13583f, deep green #123e30, restrained gold #efc679, warm
 About: consensual, documentary community dialogue, diverse adult participants. National impact/projects: geolocated, dated, licensed project photos with accurate completion status; avoid illustrating proposed works as finished. Chapters: verified local events with consent and captions. News: original reporting photos tied to each story. Events: actual venue and accessibility images once confirmed. Volunteer: real civic education activities. Donate: audited reporting or financial governance illustration. Contact/authentication/dashboards: restrained logo and simple typography; avoid decorative images of identifiable members. 2027 civic desk: neutral ballot-process diagrams; no candidate persuasion graphics.
 
 Obtain image rights and consent; record source, author, licence, date and caption. Do not imply the supplied artwork depicts a real government project or endorsement. The site intentionally uses original SVGs rather than unreliable remote stock assets.
+
+## Editorial image update
+
+The active interface now uses Inter/system typography, bright surfaces, image-led cards, topic filters and a resource-picks strip. Nine owner-supplied WebP illustrations replace the displayed conceptual SVG artwork. See `IMAGE-MANIFEST.md` for source mappings and exclusions, and `DESIGN-UPDATE.md` for installation. Earlier SVG assets remain available for compatibility but are no longer used in the active hero or editorial cards.
