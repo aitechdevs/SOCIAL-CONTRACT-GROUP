@@ -34,3 +34,8 @@ footer h3,footer h4{color:inherit}
 
 @font-face{font-family:"Roboto Condensed";src:url("/assets/fonts/RobotoCondensed.ttf") format("truetype");font-weight:100 900;font-style:normal;font-display:swap}
 @font-face{font-family:"Fjalla One";src:url("/assets/fonts/FjallaOne-Regular.ttf") format("truetype");font-weight:400;font-style:normal;font-display:swap}
+
+.office-contacts{display:flex;flex-direction:column;align-items:flex-start;gap:9px;margin:24px 0;font-style:normal}.office-contacts a{overflow-wrap:anywhere;color:var(--green);text-decoration:underline;text-underline-offset:3px}.office-email{overflow-wrap:anywhere}
+.whatsapp-float{position:fixed;right:22px;bottom:22px;z-index:80;width:58px;height:58px;display:flex;align-items:center;justify-content:center;border-radius:50%;background:#128c4b;color:#fff;border:2px solid #fff;box-shadow:0 4px 18px #0003;transition:transform .2s,background .2s}.whatsapp-float svg{width:32px;height:32px}.whatsapp-float:hover{background:#0c703b;transform:translateY(-3px)}.whatsapp-float:focus-visible{outline:3px solid #d4a846;outline-offset:4px}
+@media(max-width:640px){.whatsapp-float{right:14px;bottom:14px;width:52px;height:52px}.whatsapp-float svg{width:29px;height:29px}}
+@media(prefers-reduced-motion:reduce){.whatsapp-float{transition:none}}

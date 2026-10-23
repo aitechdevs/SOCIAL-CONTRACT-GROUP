@@ -22,3 +22,12 @@
 @media(prefers-reduced-motion:reduce){.home-page .homepage-hero .slide-frame{transition:none!important;animation:none!important;transform:none!important}}
 
 .home-page h2,.home-page h3{font-family:"Fjalla One",Arial,sans-serif;font-size:30px;line-height:32px;font-weight:400;letter-spacing:0;color:#016701}
+
+/* Caption overlay is confined to the homepage slideshow. */
+.home-page .homepage-hero .slide-overlay{position:absolute;inset:0;z-index:1;pointer-events:none;background:linear-gradient(90deg,rgba(4,27,19,.82),rgba(4,27,19,.42) 52%,rgba(4,27,19,.1)),linear-gradient(0deg,rgba(4,27,19,.38),transparent 45%)}
+.home-page .homepage-hero .slide-caption{position:relative;z-index:2;display:flex;flex-direction:column;justify-content:center;height:100%;padding-top:32px;padding-bottom:110px;pointer-events:none}
+.home-page .homepage-hero .slide-caption h2{color:#fff;font-family:"Fjalla One",Arial,sans-serif;font-size:clamp(32px,4.4vw,64px);line-height:1.12;max-width:700px;margin:0 0 22px;letter-spacing:0;text-shadow:0 2px 16px #0003}
+.home-page .homepage-hero .slide-caption p{color:#fff;font-size:clamp(15px,1.4vw,20px);line-height:1.65;max-width:570px;margin:0;text-shadow:0 1px 8px #0005}
+@media(max-width:640px){.home-page .homepage-hero .slide-caption{padding-top:24px;padding-bottom:100px}.home-page .homepage-hero .slide-caption h2{font-size:36px;max-width:330px;margin-bottom:18px}.home-page .homepage-hero .slide-caption p{max-width:320px;font-size:16px}.home-page .homepage-hero .slide-overlay{background:linear-gradient(90deg,#041b13cf,#041b1366),linear-gradient(0deg,#041b1366,transparent)}}
+@media(max-height:500px) and (orientation:landscape){.home-page .homepage-hero .slide-caption{padding:14px 0 65px}.home-page .homepage-hero .slide-caption h2{font-size:27px;margin-bottom:6px}.home-page .homepage-hero .slide-caption p{font-size:13px;line-height:1.3;max-width:510px}.home-page .homepage-hero .hero-bottom{bottom:8px}.home-page .homepage-hero .slide-controls{padding:5px 12px}}
+@media(max-width:640px){.home-page .whatsapp-float{bottom:88px}}

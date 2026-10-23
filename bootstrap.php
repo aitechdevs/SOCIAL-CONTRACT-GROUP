@@ -8,6 +8,25 @@ header('Referrer-Policy: strict-origin-when-cross-origin');
 header("Content-Security-Policy: default-src 'self'; img-src 'self'; style-src 'self' https://fonts.googleapis.com; font-src 'self' https://fonts.gstatic.com; script-src 'self'; frame-ancestors 'none'; base-uri 'self'; form-action 'self'");
 function e($s): string {return htmlspecialchars((string)$s, ENT_QUOTES,'UTF-8');}
 function db(): PDO {static $db; if ($db) return $db; $path=__DIR__.'/config/local.php'; if(!is_file($path)) throw new RuntimeException('Database not configured.'); $c=require $path; return $db=new PDO($c['dsn'],$c['user'],$c['password'],[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,PDO::ATTR_EMULATE_PREPARES=>false]);}
+// Fixed office recipients; visitor input is used only in the validated Reply-To and body.
+function notifyContactOffice(string $name, string $email, string $message, string $reference): bool {
+ if (!filter_var($email,FILTER_VALIDATE_EMAIL) || preg_match('/[\r\n]/',$email)) return false;
+ $headers=[
+  'From'=>'Social Contract Group <info@socialcontractgroup.org>',
+  'Reply-To'=>$email,
+  'MIME-Version'=>'1.0',
+  'Content-Type'=>'text/plain; charset=UTF-8',
+  'Content-Transfer-Encoding'=>'8bit'
+ ];
+ $body="New website contact enquiry\nReference: ".$reference."\nName: ".$name."\nEmail: ".$email."\n\n".$message;
+ $accepted=true;
+ foreach (['socialcontractgroup@gmail.com','info@socialcontractgroup.org'] as $recipient) {
+  try {$sent=mail($recipient,'SCG website contact enquiry',$body,$headers);}
+  catch (Throwable $ex) {$sent=false;}
+  if (!$sent) {error_log('SCG contact email handoff failed; submission reference '.$reference);$accepted=false;}
+ }
+ return $accepted;
+}
 $_SESSION['csrf'] ??= bin2hex(random_bytes(32));
 header('Cache-Control: no-store');
 $error=''; $success='';
@@ -31,5 +50,6 @@ if($_SERVER['REQUEST_METHOD']==='POST') {
  }elseif(in_array($action,['contact','volunteer'],true)){
  $message=trim($_POST['message']??'');if(strlen($name)<2||strlen($name)>120||strlen($message)<10||strlen($message)>5000) throw new InvalidArgumentException('Enter your name and a message of 10–5,000 characters.');
  $q=db()->prepare('INSERT INTO submissions(kind,name,email,message) VALUES(?,?,?,?)');$q->execute([$action,$name,$email,$message]);$success='Thank you. Your submission has been received.';
+ if($action==='contact'&&!notifyContactOffice($name,$email,$message,(string)db()->lastInsertId())) $success.=' Your message is saved, but email notification is temporarily unavailable. You can also reach our office at info@socialcontractgroup.org or 08030920092.';
  }else{throw new InvalidArgumentException('Unknown request.');}
  }catch(InvalidArgumentException $ex){$error=$ex->getMessage();}catch(PDOException $ex){$error=$ex->getCode()==='23000'?'An account with this email already exists.':'We could not save your request. Please try again later.';}catch(Throwable $ex){$error='Online submissions are not enabled yet. Please contact the site administrator.';}}}

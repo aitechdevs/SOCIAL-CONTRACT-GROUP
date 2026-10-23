@@ -51,6 +51,9 @@
    frames[active].classList.remove('is-active');frames[active].setAttribute('aria-hidden','true');frames[active].alt='';
    frames[next].classList.add('is-active');
    active=next;index=target;
+   hero.querySelector('#slide-caption-title').textContent=slides[target].title;
+   hero.querySelector('#slide-caption-description').textContent=slides[target].description;
+   if(!reduced.matches)hero.querySelector('.slide-caption').animate([{opacity:0,transform:'translateY(14px)'},{opacity:1,transform:'translateY(0)'}],{duration:650,easing:'ease-out'});
    counter.textContent=String(index+1).padStart(2,'0');progress.style.width=((index+1)/slides.length*100)+'%';
    if(manual)status.textContent='Slide '+(index+1)+' of '+slides.length;
    await new Promise(resolve=>setTimeout(resolve,reduced.matches?0:950));

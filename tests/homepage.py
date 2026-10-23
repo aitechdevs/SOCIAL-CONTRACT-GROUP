@@ -1,4 +1,4 @@
-"""Validate full-bleed sizing, no captions, preloaded fades and motion preferences."""
+"""Validate full-bleed sizing, captions, preloaded fades and motion preferences."""
 import os
 from playwright.sync_api import sync_playwright
 base=os.environ.get('SCG_BASE_URL','http://127.0.0.1:8080')
@@ -8,6 +8,11 @@ with sync_playwright() as p:
   page=browser.new_page(viewport={'width':width,'height':height})
   page.goto(base,wait_until='networkidle');page.evaluate('document.fonts.ready');assert page.evaluate("document.fonts.check('700 16px \"Roboto Condensed\"') && document.fonts.check('400 30px \"Fjalla One\"')");page.get_by_role('button',name='Pause slideshow').click()
   assert page.locator('#slide-title').count()==0
+  assert page.locator('#slide-caption-title').is_visible()
+  assert page.locator('#slide-caption-description').is_visible()
+  assert page.locator('.slide-overlay').is_visible()
+  assert page.locator('.whatsapp-float').get_attribute('href').startswith('https://wa.me/2348030920092')
+  caption=page.locator('.slide-caption h2').bounding_box();assert caption['x']>=0 and caption['x']+caption['width']<=width
   assert 'Connect communities. Follow the progress' not in page.locator('body').inner_text()
   assert page.locator('.home-site-heading').bounding_box()['width']<=1
   assert page.evaluate('document.documentElement.scrollWidth<=innerWidth')
@@ -25,6 +30,7 @@ with sync_playwright() as p:
  assert all(page.locator('.slide-frame').evaluate_all('els=>els.map(e=>e.complete&&e.naturalWidth>0)'))
  page.wait_for_function("()=>document.querySelector('.homepage-hero').getAttribute('aria-busy')==='false'")
  assert page.locator('.slide-frame.is-active').get_attribute('src').endswith('students-library.webp')
+ assert page.locator('#slide-caption-title').inner_text()=='Education opens possibilities.'
  page.locator('.homepage-hero').focus();page.keyboard.press('ArrowLeft');page.wait_for_function("()=>document.querySelector('#slide-number').textContent==='01'")
  page.wait_for_function("()=>document.querySelector('.homepage-hero').getAttribute('aria-busy')==='false'")
  assert not errors,errors
@@ -33,4 +39,4 @@ with sync_playwright() as p:
  assert r.locator('.slide-frame.is-active').evaluate('el=>getComputedStyle(el).animationName')=='none'
  assert r.locator('.slide-frame').first.evaluate('el=>getComputedStyle(el).transitionDuration')=='0s'
  browser.close()
-print('PASS: six viewport sizes, no slide captions, decoded images, crossfade controls, keyboard navigation and reduced motion')
+print('PASS: six viewport sizes, descriptive captions, WhatsApp link, decoded images, crossfade controls, keyboard navigation and reduced motion')
