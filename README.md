@@ -18,6 +18,10 @@ GitHub’s **Code → Download ZIP** downloads the full development repository i
 
 Use [the editorial/image update ZIP](https://github.com/aitechdevs/SOCIAL-CONTRACT-GROUP/raw/refs/heads/main/releases/scg-editorial-image-update.zip) and follow `DESIGN-UPDATE.md`. It preserves private database configuration and hosting settings. Image provenance and exclusions are in `IMAGE-MANIFEST.md`.
 
+## Logo and publication artwork
+
+The full-name logo is integrated into the header and footer. Download the transparent PNG master or logo kit from `releases/`; see `LOGO-GUIDE.md` for format, print sizing and the existing-site update instructions. The full cPanel source archive includes the new logo.
+
 ## Local development
 
 With PHP and MySQL installed:
